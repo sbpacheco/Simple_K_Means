@@ -61,16 +61,7 @@ def simple_k_means(data, k_value, iterations):
             centroids[j] = sum(centroid_points[j])/len(centroid_points[j])
         #This then repeats, where the distance to the new centroid is calculated and goes as many times listed as the iterations
         
-    #print out the points that belong to each cluster
-    for i in range(k_value):
-        print('These points belong to cluster ' + str(i))
-        print(centroid_points[i])
         
-    #print out final centroid coordinates    
-    for i in range(k_value):
-        print('The coordinates of centroid ' + str(i) + ' are:')
-        print(centroids[i])
-    
     #quick plots to show a plot of the cluster and the centroids for k=2 
     x = {}
     y = {}
@@ -94,24 +85,24 @@ def simple_k_means(data, k_value, iterations):
     ax.scatter(x[1], y[1], color="red", alpha=0.2)
     plt.plot(centroids[0][0], centroids[0][1], 'x')
     plt.plot(centroids[1][0], centroids[1][1], 'x') 
-
-
-# In[196]:
-
+    
+    
+    #print out final centroid coordinates    
+    for i in range(k_value):
+        print('The coordinates of centroid ' + str(i) + ' are:')
+        print(centroids[i])
+        
+    #print out the points that belong to each cluster
+    for i in range(k_value):
+        print('These points belong to cluster ' + str(i))
+        print(centroid_points[i])
+        
+    
+    
 
 #example dataset contains data from a melbourne realestate dataset. The columns are the number of bedrooms and bathrooms a house has
-simple_k_means('melb_data_subset.csv', 2, 5)
-
-
-# In[197]:
+simple_k_means('melb_data_subset.csv', 2, 2)
 
 
 #example with more iterations
 simple_k_means('melb_data_subset.csv', 2, 20)
-
-
-# In[ ]:
-
-
-
-
